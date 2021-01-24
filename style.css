@@ -1,79 +1,58 @@
+
 body{
     margin: 0;
     padding: 0;
-    background-color: #cbcb !important;
-}
-.playlist-container{
+    background-color: #ffff !important;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    width: 100%;
-    height: 100%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    display: block;
-    position: absolute;
-    background-color: #ffff;
-}
-.playlist-header {
-    margin: 3%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+   
 }
 
-.playlist-header .fa-arrow-circle-left{
-    font-size: x-large;
-    cursor: pointer;
-    color: #E74C3C;
-    
+
+header {
+    margin: 5%;
+ 
 }
-.playlist-header .fa-share-alt{
-    cursor: pointer;
-    color: black;
-    opacity: 0.6;
-}
-.playlist-header .title{
-    font-size: x-small;
+
+header #title{
+    font-size: small;
     font-weight: bold;
-    color: black;
-    opacity: 0.6;
+    color: #999999;
 }
 .music-playlist{
-    margin-top: 5%;
     width: 100%;
-    height: 70%;
+    height: auto;
+    display: flex;
+    margin-bottom: auto;
+    padding-top: -5%;
+    padding-bottom: -5%;
+
+}
+.music-playlist .row{
+   
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 17%;
+  
 }
 
 .music-info{
     width: 100%;
-    height: 12%;
+    height: auto;
     display: flex;
 }
-.music-info .fa-play{
-    float: right;
-    margin-top: 2%; 
-    margin-right: 3%;
-    font-size: xx-small;
-    font-weight: normal;
-    color: black;
-    opacity: 0.7;
-    cursor: pointer;
-}
-.music-info .fa-ellipsis-h{
-    float: right;
-    margin-right: 3%;
-    margin-top: 2%;
-    font-size: xx-small;
-    font-weight: normal;
-    color: black;
-    opacity: 0.7;
-    cursor: pointer;
-}
 .music-img{
-    width: 60px;
-    height: 60px;
+    max-width: 100%;
+    height: auto;
 }
+
 .music-img img{
-    width: 50px;
-    height: 50px;
-    margin: 2% 5%;
+    width: 70px;
+    height: 70px;
+    margin: 3% 8%;
     margin-left: 10px;
     padding: 1px;
     border-radius: 20%;
@@ -81,36 +60,133 @@ body{
 .music-name{
     width: 100%;
     padding: 0% 2%;
-    height: 10%;
 }
 .music-name h6{
-    margin-top: 7px;
+    margin-top: 8px;
     font-size: x-small;
     letter-spacing: 0.5px;
     cursor: pointer;
-    line-height: 15px;
+    
     color: black;
     opacity: 0.7;
 }
 .music-name p{
     font-size: xx-small;
-    line-height: 1px;
+    margin-top: 20px;
     letter-spacing: 0.5px;
     cursor: pointer;
     color: black;
     opacity: 0.7;
     cursor: pointer;
 }
-.playlist-footer {
+
+.music-info .fa-play{
+    float: right;
+    margin-top: 6%; 
+    margin-right: 3%;
+    font-size: xx-small;
+    font-weight: normal;
+    color: #6b6b6b;
+    cursor: pointer;
+}
+.music-info .fa-ellipsis-h{
+    float: right;
+    margin-right: 3%;
+    margin-top: 6%;
+    font-size: xx-small;
+    font-weight: normal;
+    color: #6b6b6b;
+    cursor: pointer;
+}
+
+
+footer {
     right: 0px;
-    position: absolute;
-    bottom: 10px;
+    position: fixed;
+    display: sticky;
+    bottom: 0%;
     width: 100%;
+    flex: 0 0 50px;
+    background-color: #ffff;
+    padding-top: 2%;
+    padding-bottom: 3%;
+  }
+  @media only screen and (max-width:1200px){
+    .music-playlist .row{
+   
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        height: 18%;
+      
+    }
+    .music-info>.music-img>img{
+ 
+         width: 85px;
+         height: 85px;
+         
+      }
+    .music-name{
+        width: 100%;
+        padding: 0% 2%;
+    }
+    .music-name h6{
+        margin-top: 10px;
+        font-size: medium;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        
+        color: black;
+        opacity: 0.7;
+    }
+    .music-name p{
+        font-size: small;
+        margin-top:30px;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        color: black;
+        opacity: 0.7;
+        cursor: pointer;
+    }
+  }
+  @media only screen and (max-width: 768px){
+    .music-playlist .row{
+   
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        height: 14%;
+      
+    }
+    .music-info>.music-img>img{
+ 
+         width: 70px;
+         height: 70px;
+         
+    }
+    .music-name{
+        width: 100%;
+        padding: 0% 2%;
+    }
+    .music-name h6{
+        margin-top: 10px;
+        font-size: small;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        
+        color: black;
+        opacity: 0.7;
+    }
+    .music-name p{
+        font-size: x-small;
+        margin-top: 30px;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        color: black;
+        opacity: 0.7;
+        cursor: pointer;
+    }
   }
 
-.playlist-footer .fa-pause-circle{
-    font-size: 50px;
-    color: #E74C3C;
-}
 
 
